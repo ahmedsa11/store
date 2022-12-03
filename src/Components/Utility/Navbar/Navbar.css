@@ -28,7 +28,7 @@
     text-align: center;
     border: 2px solid #333;
     transition: 0.3s;
-}
+} 
 .search input:focus{
     width: 100%;
 }
