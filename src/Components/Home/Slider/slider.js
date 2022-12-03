@@ -38,6 +38,19 @@ function Slider() {
             </div>
           </Carousel.Caption>
         </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block" src={img2} alt="Second slide" />
+          <Carousel.Caption>
+          <div className="slider-caption">
+            <Slide right>
+              <h3>هناك خصم كبير </h3>
+              </Slide>
+              <Slide right>
+              <p>خصم يصل الي 50% عند شرائك</p>
+              </Slide>
+            </div>
+          </Carousel.Caption>
+        </Carousel.Item>
         <div className="overlay"></div>
       </Carousel>
     </>

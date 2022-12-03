@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import "./Navbar.css";
 import logo from "../../../images/AS4-removebg-preview.png";
 function Navbarr() {
@@ -7,7 +7,7 @@ function Navbarr() {
     <>
         <Navbar expand="lg" variant="light" bg="light">
           <Container>
-            <Navbar.Brand href="#">
+            <Navbar.Brand href="/">
               <div className="logo">
                 <img src={logo} alt="logo" />
               </div>
@@ -18,15 +18,18 @@ function Navbarr() {
               <input type="search" placeholder="ابحث..." />
             </div>
             <div className="cart-log">
-            <div className="cart">
-                دخول
+          
+            <div className="log">
+            <Nav.Link href="/login" >   دخول </Nav.Link>
                 <i className="fa-solid fa-user"></i>{" "}
               </div>
-              <div className="log">
-                العربه
+             
+        
+              <div className="cart">
+              <Nav.Link href="/cart" >   العربه  </Nav.Link>
                 <i className="fa-solid fa-cart-shopping"></i>
               </div>
-         
+            
             </div>
             </Navbar.Collapse>
           </Container>
