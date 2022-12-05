@@ -14,6 +14,7 @@ const ProductDetalis = () => {
                        <ProductText />
                 </Col>
             </Row>
+            
         </div>
     )
 }

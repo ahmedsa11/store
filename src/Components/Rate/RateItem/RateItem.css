@@ -1,0 +1,29 @@
+
+  .cat-rate {
+    color: #ffc107;
+    font-family: "Almarai";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: right;
+  }
+
+  .rate-name {
+    color: #555550;
+    font-family: "Almarai";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 19px;
+  }
+  .rate-description {
+    color: #555550;
+    font-family: "Almarai";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: right;
+  }
+  /* end rate */
+  

@@ -14,7 +14,7 @@ const ProductGallery = () => {
             original: `${mobile}`,
         },
         {
-            original: `${mobile}`,
+            original: `${mobile}`, 
         },
     ];
     return (

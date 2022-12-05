@@ -1,0 +1,9 @@
+.btn-add-address {
+    border: none;
+    height: 50px;
+    width: 100%;
+    color: white;
+    border-radius: 9px;
+    font-family: 'Almarai';
+    background-color: #272727;
+  }

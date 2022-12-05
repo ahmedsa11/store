@@ -1,0 +1,18 @@
+.admin-content-text {
+    color: #555550;
+    font-family: Almarai;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 28px;
+    text-align: right;
+  }
+  .item-delete-edit {
+    color: #979797;
+    font-family: "Almarai";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: right;
+    cursor: pointer;
+  }
