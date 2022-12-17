@@ -61,7 +61,7 @@ function App() {
               element={<AdminAddSubCategoryPage />}
             />
             <Route
-              path="/admin/addproduct"
+              path="/admin/addproduct" 
               element={<AdminAddProductsPage />}
             />
             <Route path="/user/allorders" element={<UserAllOrdersPage/>} />

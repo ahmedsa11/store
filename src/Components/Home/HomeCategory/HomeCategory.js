@@ -1,25 +1,34 @@
-import React from 'react'
-import { Container, Row } from 'react-bootstrap'
+import React, { useEffect } from 'react'
+import { Container, Row, Spinner } from 'react-bootstrap'
 import CategoreCard from '../../Category/CategoryCard/CategoreCard'
 import Subtitle from '../../Utility/Subtitle/Subtitle'
-import clothe from '../../../images/clothe.png'
-import cat2 from '../../../images/cat2.png'
-import labtop from '../../../images/labtop.png'
-import pic from '../../../images/pic.png'
-import sale from '../../../images/sale.png'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllCategoriesdata } from '../../../redux/actions/getAllCategories'
 function HomeCategory() {
+  const colors=['#F4DBA4','#F4DBA4','#0034FF','#F4DBA4','#FF6262','F4DBA4']
+  const dispatch=useDispatch()
+  const {Category,loading}=useSelector(state=>state.getAllCategory)
+  useEffect(()=>{
+      dispatch(getAllCategoriesdata())
+     
+  },[])
   return (
    <>
          <Container>
             <Subtitle title="التصنيفات" btntitle="المزيد" pathText="/allcategory" />
-            <Row className='my-2 d-flex justify-content-between'>
-                <CategoreCard title="اجهزة منزلية" img={clothe} background="#F4DBA4" />
-                <CategoreCard title="اجهزة منزلية" img={cat2} background="#F4DBA4" />
-                <CategoreCard title="اجهزة منزلية" img={labtop} background="#0034FF" />
-                <CategoreCard title="اجهزة منزلية" img={sale} background="#F4DBA4" />
-                <CategoreCard title="اجهزة منزلية" img={clothe} background="#FF6262" />
-                <CategoreCard title="اجهزة منزلية" img={pic} background="#F4DBA4" />
-            </Row>
+            {loading?(<Spinner animation="border" variant="primary" />):(        <Row className='my-2 d-flex justify-content-between'>
+              {
+                Category.data?(
+                  Category.data.slice(0,5).map((item,index)=>{
+                    return(
+                      <CategoreCard key={index} title={item.name} img={item.image} background={colors[index]} />
+                    )
+                  })
+                ):(<h3>لايوجد تصنيفات</h3>)
+              }
+             
+            </Row>)}
+    
         </Container>
    </>
   )

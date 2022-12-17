@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactPaginate from "react-paginate";
 import './Pagination.css'
-const Pagination = () => {
+const Pagination = ({PageCount,onPress}) => {
 
-    const handlePageClick = () => { };
+    const handlePageClick = (data) => {onPress(data.selected +1) };
     return (
         <ReactPaginate
             breakLabel="..."
@@ -11,7 +11,7 @@ const Pagination = () => {
             onPageChange={handlePageClick}
             marginPagesDisplayed={2}
             pageRangeDisplayed={2}
-            pageCount={100}
+            pageCount={PageCount}
             previousLabel="السابق"
             containerClassName={"pagination justify-content-center p-3"}
             pageClassName={"page-item"}
