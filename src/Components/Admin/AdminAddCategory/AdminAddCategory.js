@@ -1,33 +1,13 @@
-import React, { useState } from 'react'
-import { Col, Row } from 'react-bootstrap'
-import { useDispatch } from 'react-redux'
-import avatar from '../../../images/avatar.png'
-import { CreateCategory } from '../../../redux/actions/getAllCategories'
+import React from 'react'
+import { Col, Row, Spinner } from 'react-bootstrap'
+import { ToastContainer } from 'react-toastify'
 import './AdminAddCategory.css'
+import AddCategoryHook from '../../../Hook/category/add-category-hook'
 const AdminAddCategory = () => {
-    const dispatch=useDispatch()
-    const [img,setImg]=useState(avatar)
-    const [Name,setName]=useState('')
-    const [selected,setSelected]=useState(null)
-    const onImageChange = (e) => {
-        if(e.target.files&&e.target.files[0]){
-            setImg(URL.createObjectURL(e.target.files[0]))
-            setSelected(e.target.files[0])
-        }
-    }
-    const handleSubmt = (e) => {
-        e.preventDefault()
-        const formdata=new FormData()
-        formdata.append("name",Name)
-        formdata.append("image",selected)
-        console.log(Name)
-        console.log(img)
-        dispatch(CreateCategory(formdata))
-        setName('')
-        setImg(avatar)
-    }
+    const [img,Name,changeName,handleSubmt,onImageChange,loading,isPress]=AddCategoryHook()
     return (
         <div>
+            
             <Row className="justify-content-start ">
                 <div className="admin-content-text pb-4">اضافه تصنيف جديد</div>
                 <Col sm="8">
@@ -43,8 +23,8 @@ const AdminAddCategory = () => {
                         type="text"
                         className="input-form d-block mt-3 px-3"
                         placeholder="اسم التصنيف"
-                        onChange={(e)=>setName(e.target.value)}
-                        value={Name} 
+                        onChange={changeName}
+                        value={Name}
                     />
                 </Col>
             </Row>
@@ -53,6 +33,10 @@ const AdminAddCategory = () => {
                     <button className="btn-save d-inline mt-2 "onClick={handleSubmt}>حفظ التعديلات</button>
                 </Col>
             </Row>
+            {
+                isPress ? loading ? <Spinner animation="border" variant="primary" /> : <h4>تم الانتهاء</h4> : null
+            }
+            <ToastContainer />
         </div>
     )
 }
