@@ -1,7 +1,7 @@
 import {useEffect, useState } from 'react'
 import notify from '../../Hook/useNotifcation'
 import avatar from '../../images/avatar.png'
-import { CreateCategory } from '../../redux/actions/getAllCategories'
+import { CreateCategory } from '../../redux/actions/CategoriesAction'
 import { useDispatch, useSelector } from 'react-redux'
 function AddCategoryHook() {
     const dispatch=useDispatch()
@@ -43,6 +43,7 @@ function AddCategoryHook() {
             setImg(avatar)
             setSelected(null)
             setIsPress(false)
+            setTimeout(() => setLoading(true), 1500)
             if (res.status === 201) {
                 notify('تمت عملية الاضافة بنجاح', "success");
             }

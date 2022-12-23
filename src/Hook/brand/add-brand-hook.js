@@ -1,7 +1,7 @@
 import {useEffect, useState } from 'react'
 import notify from '../../Hook/useNotifcation'
 import avatar from '../../images/avatar.png'
-import { CreateBrand } from '../../redux/actions/getAllBrands'
+import { CreateBrand } from '../../redux/actions/BrandsAction'
 import { useDispatch, useSelector } from 'react-redux'
 function AddBrandHook() {
     const dispatch=useDispatch()
@@ -41,6 +41,7 @@ function AddBrandHook() {
             setImg(avatar)
             setSelected(null)
             setIsPress(false)
+            setTimeout(() => setLoading(true), 1500)
             if (res.status === 201) {
                 notify('تمت عملية الاضافة بنجاح', "success");
             }

@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllBranddata } from '../../redux/actions/getAllBrands'
+import { getAllBranddata } from '../../redux/actions/BrandsAction'
 function AllBrandPageHook() {
     const dispatch=useDispatch()
     const {Brand,loading}=useSelector(state=>state.getAllBrand)
