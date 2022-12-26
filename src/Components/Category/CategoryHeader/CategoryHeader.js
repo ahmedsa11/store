@@ -1,27 +1,35 @@
-import React from 'react'
-import { Container,Row ,Col} from 'react-bootstrap'
-import './CategoryHeader.css'
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import HeaderSearchHook from "../../../Hook/search/header-search-hook";
+import "./CategoryHeader.css";
 const CategoryHeader = () => {
-    return (
-        <div className="cat-header">
+  const [Categories, getCat, getCategories] = HeaderSearchHook();
+  return (
+    <div className="cat-header">
       <Container>
         <Row>
           <Col className="d-flex justify-content-start py-2 flex-wrap">
-            <div className="cat-text-header ">الكل</div>
-            <div className="cat-text-header">الكترونيات</div>
-            <div className="cat-text-header">ملابس</div>
-            <div className="cat-text-header"> كهربيه</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">تخفيضات</div>
-            <div className="cat-text-header">المزيد</div>
+            {Categories
+              ? Categories.map((item, idx) => {
+                  return (
+                    <div
+                      key={idx}
+                      onClick={() => getCat(item._id)}
+                      className="cat-text-header "
+                    >
+                      {item.name}
+                    </div>
+                  );
+                })
+              : null}
+              <div  className="cat-text-header "> المزيد
+              </div>
+  
           </Col>
         </Row>
       </Container>
     </div>
-    )
-}
+  );
+};
 
-export default CategoryHeader
+export default CategoryHeader;

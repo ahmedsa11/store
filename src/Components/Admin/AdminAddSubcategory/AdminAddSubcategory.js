@@ -4,7 +4,17 @@ import "./AdminAddSubcategory.css";
 import { ToastContainer } from "react-toastify";
 import AddSubcategoryHook from "../../../Hook/subcategory/add-subcategory-hook";
 const AdminAddSubCategory = () => {
-    const [id,name,Category,handleChange,changeName,handleSubmit,,loading,isPress] =AddSubcategoryHook()
+    const [
+      id,
+      name,
+      Category,
+      Subcategory,
+      handleChange,
+      changeName,
+      handleSubmit,
+      loading,
+      isPress,
+    ]=AddSubcategoryHook()
   return (
     <div>
       <Row className="justify-content-start ">

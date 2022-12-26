@@ -23,6 +23,7 @@ import UserAllAddresPage from "./Pages/User/UserAllAdressPage";
 import UserAddAddressPage from "./Pages/User/UserAddAdressPage";
 import UserEditAddressPage from "./Pages/User/UserEditAddressPage";
 import UserProfilePage from "./Pages/User/UserProfilePage";
+import AdminUpdateProductPage from "./Pages/Admin/AdminUpdateProductPage";
 function App() {
   return (
     <>
@@ -70,6 +71,7 @@ function App() {
           <Route path="/user/add-address" element={<UserAddAddressPage />} />
           <Route path="/user/edit-address" element={<UserEditAddressPage />} />  
           <Route path="/user/profile" element={<UserProfilePage />} /> 
+          <Route path="/admin/updateproduct/:id" element={<AdminUpdateProductPage />} /> 
           </Routes>
         </BrowserRouter>
       </Layout>

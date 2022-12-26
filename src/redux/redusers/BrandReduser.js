@@ -1,6 +1,7 @@
-import { Create_Brand, Error, getAllBrands } from "../type";
+import { Create_Brand, Error, getAllBrands ,GetOne_Brand} from "../type";
 const initialState = {
   Brand: [],
+  OneBrand:[],
   loading: true,
 };
 const getAllBrand = (state = initialState, action) => {
@@ -16,6 +17,11 @@ const getAllBrand = (state = initialState, action) => {
           Brand: action.payload,
           loading: false
         };
+        case GetOne_Brand:
+          return {
+            OneBrand: action.payload,
+            loading: false
+          };
     case Error:
       return {
         loading: true,

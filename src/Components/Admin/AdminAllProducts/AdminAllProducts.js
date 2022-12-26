@@ -2,18 +2,14 @@ import React from 'react'
 import { Row } from 'react-bootstrap'
 import AdminAllProductsCard from '../AdminAllProductsCard/AdminAllProductsCard'
 import './AdminAllProducts.css'
-const AdminAllProducts = () => {
+const AdminAllProducts = ({products}) => {
     return (
         <div>
             <div className='admin-content-text'>ادارة جميع المنتجات</div>
             <Row className='justify-content-start'>
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
-                <AdminAllProductsCard />
+              {products?
+              (
+                products.map((item,idx)=>{return (<AdminAllProductsCard key={idx} item={item} />)})):(<h1>لا توجد منتجات</h1>)} 
             </Row>
             
         </div>

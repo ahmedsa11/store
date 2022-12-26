@@ -1,6 +1,6 @@
-import { getAllBrands, Error, Create_Brand } from "../type";
-import GetData from "../../Hooks/getAllData";
-import { InsertDataWithImage } from "../../Hooks/useInsertData";
+import { getAllBrands, Error, Create_Brand, GetOne_Brand } from "../type";
+import {GetData} from "../../Hooks/getAllData";
+import { InsertDataWithImage } from "../../Hooks/InsertData";
 export const getAllBranddata = (limit, page) => async (dispatch) => {
   try {
     const respons = await GetData(`/api/v1/brands?limit=${limit}&page=${page}`);
@@ -21,6 +21,21 @@ export const CreateBrand = (formdata) => async (dispatch) => {
     const respons = await InsertDataWithImage(`/api/v1/brands`, formdata);
     dispatch({
       type: Create_Brand,
+      payload: respons,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: Error,
+      payload: "Error" + e,
+    });
+  }
+};
+export const GetOneBrand = (id) => async (dispatch) => {
+  try {
+    const respons = await GetData(`/api/v1/brands/${id}`);
+    dispatch({
+      type: GetOne_Brand,
       payload: respons,
       loading: true,
     });

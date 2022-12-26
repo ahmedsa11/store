@@ -1,6 +1,7 @@
-import { Create_Category, Error, getAllCategories } from "../type";
+import { Create_Category, Error, getAllCategories,GetOne_Category } from "../type";
 const initialState = {
   Category: [],
+  OneCategory:[],
   loading: true,
 };
 const getAllCategory = (state = initialState, action) => {
@@ -16,6 +17,11 @@ const getAllCategory = (state = initialState, action) => {
           Category: action.payload,
           loading: false
         };
+        case GetOne_Category:
+          return {
+            OneCategory: action.payload,
+            loading: false
+          };
     case Error:
       return {
         loading: true,

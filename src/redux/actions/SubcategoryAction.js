@@ -1,6 +1,6 @@
 import { Error, Create_Subcategory, Get_Subcategory } from "../type";
-import { InsertData } from "../../Hooks/useInsertData";
-import GetData from "../../Hooks/getAllData";
+import { InsertData } from "../../Hooks/InsertData";
+import {GetData} from "../../Hooks/getAllData";
 export const CreateSubcategory = (data) => async (dispatch) => {
   try {
     const respons = await InsertData(`/api/v1/subcategories`, data);
