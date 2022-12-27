@@ -20,31 +20,38 @@ function ViewSearchProductHook() {
   let items = [];
   let pagination = [];
   let results = 0;
+  try{
   if (AllProducts.data) {
     items = AllProducts.data;
   } else {
     items = [];
   }
+}
+catch (e) { }
+try {
   if (AllProducts.paginationResult) {
     pagination = AllProducts.paginationResult.numberOfPages;
   } else {
     pagination = [];
   }
+}catch (e) { }
+try {
   if (AllProducts.results) {
     results = AllProducts.results;
   } else {
     pagination = [];
   }
-
+}
+catch (e) { }
   let pricefromString = "",
     priceToString = "";
   let word = "",
     queryCat = "",
     brandCat = "",
     priceTo = "",
-    priceFrom = "",
-    OneCat = "",
-    OneCatString = "";
+    priceFrom = ""
+    // OneCat = "",
+    // OneCatString = "";
   const getStorge = () => {
     if (localStorage.getItem("searchWord") != null)
       word = localStorage.getItem("searchWord");

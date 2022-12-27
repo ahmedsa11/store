@@ -8,6 +8,7 @@ function ViewHomeProductHook() {
     useEffect(()=>{
         dispatch(GetAllProducts())
     },[])
+    try{
     if(AllProducts.data){
     items = AllProducts.data.slice(0, 4)
     console.log(items)
@@ -16,6 +17,8 @@ function ViewHomeProductHook() {
     else{
         items = []
     }
+}
+catch (e) { }
     return [items]
 }
 

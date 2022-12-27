@@ -28,11 +28,13 @@ function SidebarSearchHook() {
 
   //to get category
   let category = [];
-  if (Category.data) category = Category.data;
+  try {
+  if (Category.data) category = Category.data;}catch (e) { }
 
   //to get category
   let brand = [];
-  if (Brand.data) brand = Brand.data;
+  try {
+  if (Brand.data) brand = Brand.data;}catch (e) { }
 
   const clickCategory = (e) => {
     let value = e.target.value;

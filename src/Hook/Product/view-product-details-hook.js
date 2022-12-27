@@ -17,11 +17,14 @@ function ViewOneProductHook(id) {
     dispatch(GetOneProducts(id));
   }, []);
   let item = [];
+  try{
   if (OneProduct.data) {
     item = OneProduct.data;
   } else {
     item = [];
   }
+}
+catch (e) { }
   useEffect(() => {
     if (item.category) {
       dispatch(getOneCategory(item.category));
@@ -35,6 +38,7 @@ function ViewOneProductHook(id) {
   }, [item]);
 
   let images = [];
+  try{
   if (item.images) {
     images = item.images.map((img) => {
       return { original: img };
@@ -42,21 +46,29 @@ function ViewOneProductHook(id) {
   } else {
     images = [{ original: `${mobile}` }];
   }
+}
+catch (e) { }
+let cat = [];
+try {
 
-  let cat = [];
   if (OneCategory.data) {
     cat = OneCategory.data;
   } else {
     cat = [];
   }
-
+}
+catch (e) { }
   let brand = [];
+  try {
   if (OneBrand.data) {
     brand = OneBrand.data;
   } else {
     brand = [];
   }
-  let prod = [];
+}catch (e) { }
+let prod = [];
+try{
+ 
   if (ProductLike) {
     prod = ProductLike.data;
     if(prod){
@@ -65,6 +77,7 @@ function ViewOneProductHook(id) {
   } else {
     prod = [];
   }
+}catch (e) { }
   return [item, images, mobile, cat, brand, prod];
 }
 export default ViewOneProductHook;

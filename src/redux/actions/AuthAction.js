@@ -3,7 +3,6 @@ import { InsertData } from '../../Hooks/InsertData';
 import { CREATE_NEW_USER,RESET_PASSWORD,VERIFY_PASSWORD, FOREGT_PASSWORD, GET_CURERNT_USER, LOGIN_USER } from '../type'
 import { InsUpdateData } from '../../Hooks/UpdataData';
 import { GetDataToken } from '../../Hooks/getAllData';
-
 //create new user 
 export const createNewUser = (data) => async (dispatch) => {
     try {
@@ -58,8 +57,6 @@ export const getLoggedUser = () => async (dispatch) => {
     }
 }
 
-
-//1-foregt  passwrod 
 export const forgetPassword = (data) => async (dispatch) => {
     try {
         const response = await InsertData(`/api/v1/auth/forgotPasswords`, data);
