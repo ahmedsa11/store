@@ -17,7 +17,7 @@ const AddBrandHook=()=> {
       setSelected(e.target.files[0]);
     }
   };
-  const changeName = (e) => {
+  const changeName = (e) => { 
     e.persist();
     setName(e.target.value);
   };
