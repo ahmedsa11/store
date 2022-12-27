@@ -5,7 +5,7 @@ import { getAllCategoriesdata } from "../../redux/actions/CategoriesAction";
 import { CreateProducts } from "../../redux/actions/ProductsAction";
 import { GetOneSubcategory } from "../../redux/actions/SubcategoryAction";
 import notify from "../Notifcation";
-function AddProductHook() {
+const AddProductHook=()=> {
   const { Category } = useSelector((state) => state.getAllCategory);
   const { Brand } = useSelector((state) => state.getAllBrand);
   const { Subcategory } = useSelector((state) => state.getAllSubcategory);

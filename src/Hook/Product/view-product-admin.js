@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { GetAllProducts, getAllProductsPage } from '../../redux/actions/ProductsAction';
-function ViewProductAdminHook() {
+const ViewProductAdminHook=()=> {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(GetAllProducts(12))

@@ -7,7 +7,7 @@ import {
   GetProductsLike,
 } from "../../redux/actions/ProductsAction";
 import { GetOneBrand } from "../../redux/actions/BrandsAction";
-function ViewOneProductHook(id) {
+const ViewOneProductHook=(id)=> {
   const dispatch = useDispatch();
   const OneProduct = useSelector((state) => state.getAllProduct.OneProduct);
   const OneCategory = useSelector((state) => state.getAllCategory.OneCategory);

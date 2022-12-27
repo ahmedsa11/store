@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllCategoriesdata } from '../../redux/actions/CategoriesAction'
 import ViewSearchProductHook from '../Product/view-search-product-hook'
 
-function HeaderSearchHook() {
+const HeaderSearchHook=()=> {
     const dispatch=useDispatch()
     const [items,pagination,onPress,getProud,results]=ViewSearchProductHook()
     let Categories=[]

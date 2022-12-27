@@ -3,7 +3,7 @@ import notify from "../Notifcation";
 import avatar from "../../images/avatar.png";
 import { CreateBrand } from "../../redux/actions/BrandsAction";
 import { useDispatch, useSelector } from "react-redux";
-function AddBrandHook() {
+const AddBrandHook=()=> {
   const dispatch = useDispatch();
   const [img, setImg] = useState(avatar);
   const [Name, setName] = useState("");

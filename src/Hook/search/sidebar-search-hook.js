@@ -6,7 +6,7 @@ import { getAllBranddata } from "../../redux/actions/BrandsAction";
 import { getAllCategoriesdata } from "../../redux/actions/CategoriesAction";
 import ViewSearchProductHook from "../Product/view-search-product-hook";
 
-function SidebarSearchHook() {
+const SidebarSearchHook=()=> {
   const [items, pagination, onPress, getProud, results] =
     ViewSearchProductHook();
     const [From, setPriceFrom] = useState(0)

@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { GetAllProducts } from '../../redux/actions/ProductsAction';
-function ViewHomeProductHook() {
+const ViewHomeProductHook=()=> {
     const dispatch=useDispatch();
     let items=[]
     const AllProducts=useSelector(state=>state.getAllProduct.AllProducts)

@@ -1,8 +1,6 @@
 import React from "react";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
-import LoginHook from "../../../Hook/auth/LoginHook";
 import VerifyPasswordHook from "../../../Hook/auth/VerifyPasswordHook";
 import "./VerifyPassword.css";
 const VerifyPassword = () => {

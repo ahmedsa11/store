@@ -3,7 +3,7 @@ import notify from "../Notifcation";
 import { getAllCategoriesdata } from "../../redux/actions/CategoriesAction";
 import { useDispatch, useSelector } from "react-redux";
 import { CreateSubcategory } from "../../redux/actions/SubcategoryAction";
-function AddSubcategoryHook() {
+const AddSubcategoryHook=()=> {
   const dispatch = useDispatch();
   const { Category } = useSelector((state) => state.getAllCategory);
   const {Subcategory} = useSelector((state) => state.getAllSubcategory);

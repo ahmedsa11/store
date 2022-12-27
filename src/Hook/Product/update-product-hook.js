@@ -8,7 +8,7 @@ import {
 } from "../../redux/actions/ProductsAction";
 import { GetOneSubcategory } from "../../redux/actions/SubcategoryAction";
 import notify from "../Notifcation";
-function UpdateProductHook(id) {
+const UpdateProductHook=(id)=> {
   const dispatch = useDispatch();
   const [options, setOptions] = useState([]);
   const [images, setImages] = useState([]);

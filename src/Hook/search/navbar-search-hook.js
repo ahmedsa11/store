@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import ViewSearchProductHook from '../Product/view-search-product-hook'
-function NavbarSearchHook() {
+const NavbarSearchHook=()=> {
     const [searchWord,setSearchSord]=useState()
     const [,,,getProud]=ViewSearchProductHook()
     const handleChangeSearch = (e) =>{

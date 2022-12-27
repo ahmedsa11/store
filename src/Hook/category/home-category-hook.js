@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategoriesdata } from "../../redux/actions/CategoriesAction";
 import Connect from "../internetconnection";
-function HomeCategoryPage() {
+const HomeCategoryPage=()=> {
   const colors = [
     "#F4DBA4",
     "#F4DBA4",

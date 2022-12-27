@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createNewUser } from '../../redux/actions/AuthAction';
 import notify from '../Notifcation'
-function RegisterHook() {
+const RegisterHook=()=> {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [name, setName] = useState('')

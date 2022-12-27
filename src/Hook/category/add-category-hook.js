@@ -3,7 +3,7 @@ import notify from "../Notifcation";
 import avatar from "../../images/avatar.png";
 import { CreateCategory } from "../../redux/actions/CategoriesAction";
 import { useDispatch, useSelector } from "react-redux";
-function AddCategoryHook() {
+const AddCategoryHook=()=> {
   const dispatch = useDispatch();
   const [img, setImg] = useState(avatar);
   const [Name, setName] = useState("");

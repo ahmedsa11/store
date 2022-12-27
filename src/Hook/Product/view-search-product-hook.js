@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsSearch } from "../../redux/actions/ProductsAction";
-function ViewSearchProductHook() {
+const ViewSearchProductHook=()=> {
   const dispatch = useDispatch();
   let limit = 8;
   const getProud = async () => {

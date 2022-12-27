@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllCategoriesdata } from '../../redux/actions/CategoriesAction'
-function AllCategoryPageHook() {
+const AllCategoryPageHook=()=> {
     const dispatch=useDispatch()
     const {Category,loading}=useSelector(state=>state.getAllCategory)
     let PageCount=0
