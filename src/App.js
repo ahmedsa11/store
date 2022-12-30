@@ -27,6 +27,8 @@ import AdminUpdateProductPage from "./Pages/Admin/AdminUpdateProductPage";
 import Forgetpassword from "./Pages/auth/Forgetpassword/Forgetpassword";
 import VerifyPassword from "./Pages/auth/VerifyPassword/VerifyPassword";
 import Resetpassword from "./Pages/auth/Resetpassword/Resetpassword";
+import AdminAddCouponPage from "./Pages/Admin/AdminAddCouponPage";
+import AdminEditCouponPage from "./Pages/Admin/AdminEditCouponPage";
 function App() {
   return (
     <>
@@ -72,12 +74,14 @@ function App() {
           <Route path="/user/favoriteproducts" element={<UserFavoriteProductsPage />} />
           <Route path="/user/addresses" element={<UserAllAddresPage />} />
           <Route path="/user/add-address" element={<UserAddAddressPage />} />
-          <Route path="/user/edit-address" element={<UserEditAddressPage />} />  
+          <Route path="/user/edit-address/:id" element={<UserEditAddressPage />} />  
           <Route path="/user/profile" element={<UserProfilePage />} /> 
           <Route path="/admin/updateproduct/:id" element={<AdminUpdateProductPage />} /> 
           <Route path="/user/forget-password" element={<Forgetpassword />} />
           <Route path="/user/verify-code" element={<VerifyPassword />} />
           <Route path="/user/reset-password" element={<Resetpassword />} />
+          <Route path="/admin/addcoupon" element={<AdminAddCouponPage />} />
+          <Route path="/admin/editcoupon/:id" element={<AdminEditCouponPage />} />
           </Routes>
         </BrowserRouter>
       </Layout>

@@ -45,7 +45,7 @@ try {
 catch (e) { }
   let pricefromString = "",
     priceToString = "";
-  let word = "",
+   let word = "",
     queryCat = "",
     brandCat = "",
     priceTo = "",

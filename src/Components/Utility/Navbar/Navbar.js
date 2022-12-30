@@ -15,9 +15,11 @@ function Navbarr() {
       setUser(JSON.parse(localStorage.getItem("user")));
   }, []);
   const logOut = () => {
-    localStorage.removeItem("user");
-    setUser("");
-  };
+      localStorage.removeItem("user")
+      localStorage.removeItem("token")
+      setUser('')
+  }
+
   return (
     <>
       <Navbar expand="lg" variant="light" bg="light">

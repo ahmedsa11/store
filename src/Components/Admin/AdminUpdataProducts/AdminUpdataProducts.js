@@ -44,7 +44,7 @@ const [
   return (
     <div>
       <Row className="justify-content-start ">
-        <div className="admin-content-text pb-4"> تعديل المنتج {}</div>
+        <div className="admin-content-text pb-4"> تعديل المنتج </div>
         <Col sm="8">
           <div className="text-form pb-2"> صور للمنتج</div>
           <MultiImageInput

@@ -9,6 +9,11 @@ import ViewOneProductHook from "../../Hook/Product/view-product-details-hook";
 const ProductDetalisPage = () => {
   const { id } = useParams();
   const [item, images, mobile, cat, brand, prod] = ViewOneProductHook(id);
+  if (item) {
+    var rateAvg = item.ratingsAverage
+    var rateQty = item.ratingsQuantity
+}
+
   return (
     <div style={{ minHeight: "670px" }}>
       <CategoryHeader />
@@ -21,7 +26,7 @@ const ProductDetalisPage = () => {
           images={images}
           id={id}
         />
-        <RateContainer />
+        <RateContainer rateAvg ={rateAvg } rateQty={rateQty}/>
         <ProductCardContainer products={prod} title="منتجات قد تعجبك" />
       </Container>
     </div>

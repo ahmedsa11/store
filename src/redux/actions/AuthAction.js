@@ -1,6 +1,6 @@
 
 import { InsertData } from '../../Hooks/InsertData';
-import { CREATE_NEW_USER,RESET_PASSWORD,VERIFY_PASSWORD, FOREGT_PASSWORD, GET_CURERNT_USER, LOGIN_USER } from '../type'
+import {UPDATE_USER_PASSWORD,UPDATE_USER_PROFILE, CREATE_NEW_USER,RESET_PASSWORD,VERIFY_PASSWORD, FOREGT_PASSWORD, GET_CURERNT_USER, LOGIN_USER } from '../type'
 import { InsUpdateData } from '../../Hooks/UpdataData';
 import { GetDataToken } from '../../Hooks/getAllData';
 //create new user 
@@ -107,6 +107,46 @@ export const resetPassword = (data) => async (dispatch) => {
     } catch (e) {
         dispatch({
             type: RESET_PASSWORD,
+            payload: e.response,
+        })
+    }
+}
+
+
+//update  user data 
+export const updateUserProfileData = (body) => async (dispatch) => {
+    try {
+        const response = await InsUpdateData(`/api/v1/users/updateMe`, body);
+        console.log(response)
+        dispatch({
+            type: UPDATE_USER_PROFILE,
+            payload: response,
+            loading: true
+        })
+
+    } catch (e) {
+        dispatch({
+            type: UPDATE_USER_PROFILE,
+            payload: e.response,
+        })
+    }
+}
+
+
+//update  user password
+export const updateUserPassword = (body) => async (dispatch) => {
+    try {
+        const response = await InsUpdateData(`/api/v1/users/changeMyPassword`, body);
+        console.log(response)
+        dispatch({
+            type: UPDATE_USER_PASSWORD,
+            payload: response,
+            loading: true
+        })
+
+    } catch (e) {
+        dispatch({
+            type: UPDATE_USER_PASSWORD,
             payload: e.response,
         })
     }

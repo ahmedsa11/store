@@ -1,20 +1,22 @@
 import React from 'react'
-import { Row, Col, Modal, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import DeleteAddressHook from '../../../Hook/user/Delete-address-hook';
+import { Button, Col, Modal, Row } from 'react-bootstrap'
 import deleteicon from '../../../images/delete.png'
-const UserAddressCard = ({item}) => {
-  
-    const [show, handleClose, handleShow, handelDelete] = DeleteAddressHook(item._id)
+import editicon from '../../../images/edit.png'
+import { Link } from 'react-router-dom';
+import CouponCardHook from '../../../Hook/coupon/coupon-card-hook';
+const AdminCoupnCard = ({ coupon }) => {
+
+    const [formatDate, dateString, show, handleClose, handleShow, handelDelete] = CouponCardHook(coupon)
 
     return (
         <div className="user-address-card my-3 px-2">
+
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header >
                     <Modal.Title> <div className='font'>تاكيد الحذف</div></Modal.Title>
                 </Modal.Header>
-                <Modal.Body><div className='font'>هل انتا متاكد من عملية الحذف العنوان</div></Modal.Body>
+                <Modal.Body><div className='font'>هل انتا متاكد من عملية الحذف للكوبون</div></Modal.Body>
                 <Modal.Footer>
                     <Button className='font' variant="success" onClick={handleClose}>
                         تراجع
@@ -25,18 +27,20 @@ const UserAddressCard = ({item}) => {
                 </Modal.Footer>
             </Modal>
 
+
+
             <Row className="d-flex justify-content-between  ">
                 <Col xs="6">
-                    <div className="p-2">{item.alias}</div>
+                    <div className="p-2">اسم الكوبون: {coupon.name}</div>
                 </Col>
                 <Col xs="6" className="d-flex d-flex justify-content-end">
                     <div className="d-flex p-2">
-                        <Link to={`/user/edit-address/${item._id}`} style={{ textDecoration: 'none' }}>
+                        <Link to={`/admin/editcoupon/${coupon._id}`} style={{ textDecoration: 'none' }}>
                             <div className="d-flex mx-2">
                                 <img
                                     alt=""
                                     className="ms-1 mt-2"
-                                    src={deleteicon}
+                                    src={editicon}
                                     height="17px"
                                     width="15px"
                                 />
@@ -52,7 +56,7 @@ const UserAddressCard = ({item}) => {
                                 height="17px"
                                 width="15px"
                             />
-                            <p className="item-delete-edit"> حذف</p>
+                            <p className="item-delete-edit"> ازاله</p>
                         </div>
                     </div>
                 </Col>
@@ -64,9 +68,9 @@ const UserAddressCard = ({item}) => {
                         style={{
                             color: "#555550",
                             fontFamily: "Almarai",
-                            fontSize: "14px",
+                            fontSize: "16px",
                         }}>
-                        {item.details}
+                        تاريخ الانتهاء:  {formatDate(dateString)}
                     </div>
                 </Col>
             </Row>
@@ -79,7 +83,7 @@ const UserAddressCard = ({item}) => {
                             fontFamily: "Almarai",
                             fontSize: "16px",
                         }}>
-                        رقم الهاتف:
+                        : نسبه الخصم
                     </div>
 
                     <div
@@ -89,12 +93,12 @@ const UserAddressCard = ({item}) => {
                             fontSize: "16px",
                         }}
                         className="mx-2">
-                        {item.phone}
+                        {coupon.discount} %
                     </div>
                 </Col>
             </Row>
-        </div>
+        </div >
     )
 }
 
-export default UserAddressCard
+export default AdminCoupnCard

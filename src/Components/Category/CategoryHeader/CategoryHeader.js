@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import HeaderSearchHook from "../../../Hook/search/header-search-hook";
 import "./CategoryHeader.css";
 const CategoryHeader = () => {
-  const [Categories, getCat, getCategories] = HeaderSearchHook();
+  const [Categories] = HeaderSearchHook();
   return (
     <div className="cat-header">
       <Container>
@@ -14,7 +14,6 @@ const CategoryHeader = () => {
                   return (
                     <div
                       key={idx}
-                      onClick={() => getCat(item._id)}
                       className="cat-text-header "
                     >
                       {item.name}

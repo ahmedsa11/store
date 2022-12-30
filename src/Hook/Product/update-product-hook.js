@@ -8,8 +8,10 @@ import {
 } from "../../redux/actions/ProductsAction";
 import { GetOneSubcategory } from "../../redux/actions/SubcategoryAction";
 import notify from "../Notifcation";
+import { useNavigate } from 'react-router-dom';
 const UpdateProductHook=(id)=> {
   const dispatch = useDispatch();
+  const navegate=useNavigate()
   const [options, setOptions] = useState([]);
   const [images, setImages] = useState([]);
   const [ProdName, setProdName] = useState("");
@@ -17,14 +19,14 @@ const UpdateProductHook=(id)=> {
   const [PriceBefore, setPriceBefore] = useState();
   const [PriceAfter, setPriceAfter] = useState();
   const [Qty, setQty] = useState();
-  const [Catid, setCatid] = useState("");
+  const [Catid, setCatid] = useState("0");
   const [SelectedSubcat, setSelectedSubcat] = useState([]);
   const [Brandid, setBrandid] = useState("");
   const [colors, setColors] = useState([]);
   const [showPic, setShowPic] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isPress, setIsPress] = useState(false);
-  const item = useSelector((state) => state.getAllProduct.OneProduct);
+  const item = useSelector(state=> state.getAllProduct.OneProduct);
   useEffect(() => {
     const Go = async () => {
       await dispatch(GetOneProducts(id));
@@ -83,6 +85,7 @@ const UpdateProductHook=(id)=> {
   }, [Subcategory]);
 
   useEffect(() => {
+    try{
     if (item.data) {
       setImages(item.data.images);
       setProdName(item.data.title);
@@ -93,6 +96,8 @@ const UpdateProductHook=(id)=> {
       setBrandid(item.data.brand);
       setColors(item.data.availableColors);
     }
+  }
+  catch (e) { } 
   }, [item]);
 
   const onSelectBrand = (e) => {
@@ -195,7 +200,7 @@ const UpdateProductHook=(id)=> {
   const { UpdateProducts } = useSelector((state) => state.getAllProduct);
   useEffect(() => {
     if (loading === false) {
-      setCatid(0);
+      setCatid('0');
       setColors([]);
       setImages([]);
       setProdName("");
@@ -208,9 +213,9 @@ const UpdateProductHook=(id)=> {
       setIsPress(false);
       setTimeout(() => setLoading(true), 1500);
       if (UpdateProducts) {
-       
         if (UpdateProducts.status === 200) {
           notify("تم الاضافة بنجاح", "success");
+          navegate("/admin/allproducts")
         } else {
           notify("هناك مشكله", "error");
         }

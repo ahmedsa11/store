@@ -1,8 +1,10 @@
 body {
   margin: 0;
-  font-family: 'Almarai', sans-serif;
+  font-family: 'Almarai', sans-serif !important;
 }
-
+img {
+  object-fit: cover;
+}
 /* code {
   font-family: 'Almarai', sans-serif;
 } */

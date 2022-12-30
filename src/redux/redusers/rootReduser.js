@@ -4,10 +4,18 @@ import getAllBrand from "./BrandReduser";
 import getAllSubcategory from "./SubcategoryReduser";
 import getAllProduct from './ProductReduser'
 import authReducer from './AuthReducer'
+import reviewReducer from './ReviewReduser'
+import addToWishListReducer from './WishListReduser'
+import couponReducer from './CouponReducer'
+import userAddressesReducer from "./UserAddressesReducer"
 export default combineReducers({
     getAllCategory,
     getAllBrand,
     getAllSubcategory,
     getAllProduct,
-    authReducer
+    authReducer,
+    reviewReducer,
+    addToWishListReducer,
+    couponReducer,
+    userAddressesReducer
 })
