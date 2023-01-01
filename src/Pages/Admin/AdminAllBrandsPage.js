@@ -1,9 +1,8 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import AdminAddCoupon from '../../Components/Admin/AdminAddCoupon/AdminAddCoupon'
+import AdminAllBrands from '../../Components/Admin/AdminAllBrands/AdminAllBrands'
 import AdminSideBar from '../../Components/Admin/AdminSidebar/AdminSidebar'
-
-const AdminAddCouponPage = () => {
+const AdminAllBrandsPage = () => {
     return (
         <Container >
             <Row className='py-3'>
@@ -12,11 +11,11 @@ const AdminAddCouponPage = () => {
                 </Col>
 
                 <Col sm="9" xs="10" md="10">
-                     <AdminAddCoupon />
+                    <AdminAllBrands  /> 
                 </Col>
-            </Row> 
+            </Row>
         </Container>
     )
 }
 
-export default AdminAddCouponPage
+export default AdminAllBrandsPage

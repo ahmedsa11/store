@@ -1,7 +1,14 @@
-import { Create_Brand, Error, getAllBrands ,GetOne_Brand} from "../type";
+import {
+  Create_Brand,
+  Delete_Brand,
+  Error,
+  getAllBrands,
+  GetOne_Brand,
+} from "../type";
 const initialState = {
   Brand: [],
-  OneBrand:[],
+  OneBrand: [],
+  DeleteBrand: [],
   loading: true,
 };
 const getAllBrand = (state = initialState, action) => {
@@ -10,22 +17,27 @@ const getAllBrand = (state = initialState, action) => {
       return {
         ...state,
         Brand: action.payload,
-        loading: false
+        loading: false,
       };
-      case Create_Brand:
-        return {
-          Brand: action.payload,
-          loading: false
-        };
-        case GetOne_Brand:
-          return {
-            OneBrand: action.payload,
-            loading: false
-          };
+    case Create_Brand:
+      return {
+        Brand: action.payload,
+        loading: false,
+      };
+    case GetOne_Brand:
+      return {
+        OneBrand: action.payload,
+        loading: false,
+      };
+    case Delete_Brand:
+      return {
+        ...state,
+        DeleteBrand: action.payload,
+      };
     case Error:
       return {
         loading: true,
-        Brand: action.payload
+        Brand: action.payload,
       };
     default:
       return state;

@@ -3,8 +3,11 @@ import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./Navbar.css";
 import logo from "../../../images/AS4-removebg-preview.png";
 import NavbarSearchHook from "../../../Hook/search/navbar-search-hook";
+import GetAllUserCartHook from "../../../Hook/cart/get-user-cart-hook";
 function Navbarr() {
   const [searchWord, handleChangeSearch] = NavbarSearchHook();
+  const [itemsNum] = GetAllUserCartHook();
+
   let word = "";
   if (localStorage.getItem("searchWord") != null) {
     word = localStorage.getItem("searchWord");
@@ -15,10 +18,10 @@ function Navbarr() {
       setUser(JSON.parse(localStorage.getItem("user")));
   }, []);
   const logOut = () => {
-      localStorage.removeItem("user")
-      localStorage.removeItem("token")
-      setUser('')
-  }
+    localStorage.removeItem("user");
+    localStorage.removeItem("token");
+    setUser("");
+  };
 
   return (
     <>
@@ -66,6 +69,9 @@ function Navbarr() {
               <div className="cart">
                 <Nav.Link href="/cart"> العربه </Nav.Link>
                 <i className="fa-solid fa-cart-shopping"></i>
+                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                  {itemsNum || 0}
+                </span>
               </div>
             </div>
           </Navbar.Collapse>

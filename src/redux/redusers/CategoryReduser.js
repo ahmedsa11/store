@@ -1,7 +1,14 @@
-import { Create_Category, Error, getAllCategories,GetOne_Category } from "../type";
+import {
+  Create_Category,
+  Delete_Category,
+  Error,
+  getAllCategories,
+  GetOne_Category,
+} from "../type";
 const initialState = {
   Category: [],
-  OneCategory:[],
+  OneCategory: [],
+  DeleteCategory: [],
   loading: true,
 };
 const getAllCategory = (state = initialState, action) => {
@@ -10,22 +17,27 @@ const getAllCategory = (state = initialState, action) => {
       return {
         ...state,
         Category: action.payload,
-        loading: false
+        loading: false,
       };
-      case Create_Category:
-        return {
-          Category: action.payload,
-          loading: false
-        };
-        case GetOne_Category:
-          return {
-            OneCategory: action.payload,
-            loading: false
-          };
+    case Create_Category:
+      return {
+        Category: action.payload,
+        loading: false,
+      };
+    case GetOne_Category:
+      return {
+        OneCategory: action.payload,
+        loading: false,
+      };
+    case Delete_Category:
+      return {
+        ...state,
+        DeleteCategory: action.payload,
+      };
     case Error:
       return {
         loading: true,
-        Category: action.payload
+        Category: action.payload,
       };
     default:
       return state;

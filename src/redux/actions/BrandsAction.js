@@ -1,6 +1,7 @@
-import { getAllBrands, Error, Create_Brand, GetOne_Brand } from "../type";
+import { getAllBrands, Error, Create_Brand, GetOne_Brand, Delete_Brand } from "../type";
 import {GetData} from "../../Hooks/getAllData";
 import { InsertDataWithImage } from "../../Hooks/InsertData";
+import DeleteData from "../../Hooks/DeleteData";
 export const getAllBranddata = (limit, page) => async (dispatch) => {
   try {
     const respons = await GetData(`/api/v1/brands?limit=${limit}&page=${page}`);
@@ -36,6 +37,22 @@ export const GetOneBrand = (id) => async (dispatch) => {
     const respons = await GetData(`/api/v1/brands/${id}`);
     dispatch({
       type: GetOne_Brand,
+      payload: respons,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: Error,
+      payload: "Error" + e,
+    });
+  }
+};
+
+export const DeleteBrands = (id) => async (dispatch) => {
+  try {
+    const respons = await DeleteData(`/api/v1/brands/${id}`);
+    dispatch({
+      type: Delete_Brand,
       payload: respons,
       loading: true,
     });

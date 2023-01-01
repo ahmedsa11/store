@@ -8,6 +8,7 @@ import reviewReducer from './ReviewReduser'
 import addToWishListReducer from './WishListReduser'
 import couponReducer from './CouponReducer'
 import userAddressesReducer from "./UserAddressesReducer"
+import cartReducer from './CartReducer'
 export default combineReducers({
     getAllCategory,
     getAllBrand,
@@ -17,5 +18,6 @@ export default combineReducers({
     reviewReducer,
     addToWishListReducer,
     couponReducer,
-    userAddressesReducer
+    userAddressesReducer,
+    cartReducer,
 })

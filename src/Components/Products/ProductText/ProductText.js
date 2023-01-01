@@ -1,7 +1,12 @@
 import React from 'react'
 import { Row,Col } from 'react-bootstrap'
+import { useParams } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import AddToCartHook from '../../../Hook/cart/Add-Cart-Hook'
 import './ProductText.css'
 const ProductText = ({cat,item,brand}) => {
+  const {id}=useParams()
+  const  [colorClick, indexColor, addToCartHandel]=AddToCartHook(id,item)
     return (
         <div>
       <Row className="mt-2">
@@ -27,8 +32,9 @@ const ProductText = ({cat,item,brand}) => {
               return(
                 <div
                 key={idx}
-                className="color ms-2 border"
-                style={{ backgroundColor: color }}></div>
+                onClick={()=>colorClick(idx,color)}
+                className="color ms-2"
+                style={{ backgroundColor: color,border:indexColor===idx?"2px solid #333":"none" }}></div>
               )
             })
                 
@@ -50,9 +56,10 @@ const ProductText = ({cat,item,brand}) => {
       <Row className="mt-4">
         <Col md="12">
           <div className="product-price d-inline px-3 py-3 border">{item.price} جنية</div>
-          <div className="product-cart-add px-3 py-3 d-inline mx-3">اضف للعربة</div>
+          <div onClick={addToCartHandel} className="product-cart-add px-3 py-3 d-inline mx-3">اضف للعربة</div>
         </Col>
       </Row>
+      <ToastContainer/>
     </div>
     )
 }

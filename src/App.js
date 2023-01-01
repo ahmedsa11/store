@@ -29,6 +29,8 @@ import VerifyPassword from "./Pages/auth/VerifyPassword/VerifyPassword";
 import Resetpassword from "./Pages/auth/Resetpassword/Resetpassword";
 import AdminAddCouponPage from "./Pages/Admin/AdminAddCouponPage";
 import AdminEditCouponPage from "./Pages/Admin/AdminEditCouponPage";
+import AdminAllBrandsPage from "./Pages/Admin/AdminAllBrandsPage";
+import AdminAllCategoriesPage from "./Pages/Admin/AdminAllCategoriesPage";
 function App() {
   return (
     <>
@@ -82,6 +84,8 @@ function App() {
           <Route path="/user/reset-password" element={<Resetpassword />} />
           <Route path="/admin/addcoupon" element={<AdminAddCouponPage />} />
           <Route path="/admin/editcoupon/:id" element={<AdminEditCouponPage />} />
+          <Route path="/admin/allbrands" element={<AdminAllBrandsPage />} />
+          <Route path="/admin/allcategories" element={<AdminAllCategoriesPage />} />
           </Routes>
         </BrowserRouter>
       </Layout>
