@@ -6,6 +6,8 @@ import {
   GetProduct_Like,
   DELETE_PRODUCTS,
   UPDATE_PRODUCTS,
+  GET_ALL_PRODUCTS_CATEGORY,
+  GET_ALL_PRODUCTS_BRAND,
 } from "../type";
 const initialState = {
   Product: [],
@@ -14,6 +16,8 @@ const initialState = {
   ProductLike: [],
   DeleteProducts: [],
   UpdateProducts: [],
+  allProductCat: [],
+  allProductBrand: [],
   loading: true,
 };
 const getAllProduct = (state = initialState, action) => {
@@ -53,6 +57,16 @@ const getAllProduct = (state = initialState, action) => {
         UpdateProducts: action.payload,
         loading: false,
       };
+      case GET_ALL_PRODUCTS_CATEGORY:
+        return {
+            loading: true,
+            allProductCat: action.payload,
+        }
+    case GET_ALL_PRODUCTS_BRAND:
+        return {
+            loading: true,
+            allProductBrand: action.payload,
+        }
     case Error:
       return {
         loading: true,

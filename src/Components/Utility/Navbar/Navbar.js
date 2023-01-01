@@ -69,7 +69,7 @@ function Navbarr() {
               <div className="cart">
                 <Nav.Link href="/cart"> العربه </Nav.Link>
                 <i className="fa-solid fa-cart-shopping"></i>
-                <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                <span className="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
                   {itemsNum || 0}
                 </span>
               </div>

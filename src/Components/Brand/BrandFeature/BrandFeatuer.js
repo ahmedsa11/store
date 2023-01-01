@@ -16,7 +16,7 @@ const BrandFeatured = ({ title, btntitle }) => {
           {Brand.data ? (
             Brand.data.slice(0, 5).map((item, index) => {
               return (
-                <BrandCard key={index} title={item.name} img={item.image} />
+                <BrandCard key={index} title={item.name}id={item._id} img={item.image} />
               );
             })
           ) : (

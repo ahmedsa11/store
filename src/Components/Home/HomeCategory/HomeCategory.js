@@ -18,6 +18,7 @@ function HomeCategory() {
                 return (
                   <CategoreCard
                     key={index}
+                    id={item._id}
                     title={item.name}
                     img={item.image}
                     background={colors[index]}
