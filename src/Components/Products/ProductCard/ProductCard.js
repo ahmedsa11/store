@@ -43,7 +43,7 @@ const ProductCard = ({ item, favProd }) => {
           <Card.Title>
             <div className="card-title">{item.title}</div>
           </Card.Title>
-          <Card.Text>
+          <div className="card-text">
             <div className="d-flex justify-content-between ">
               <div className="d-flex">
                 <img
@@ -72,7 +72,7 @@ const ProductCard = ({ item, favProd }) => {
                 <div className="card-currency mx-1">جنيه</div>
               </div>
             </div>
-          </Card.Text>
+          </div>
         </Card.Body>
       </Card>
       <ToastContainer />

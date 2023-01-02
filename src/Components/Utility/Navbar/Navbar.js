@@ -25,7 +25,7 @@ function Navbarr() {
 
   return (
     <>
-      <Navbar expand="lg" variant="light" bg="light">
+      <Navbar expand="lg" variant="light" className="navv">
         <Container>
           <Navbar.Brand href="/">
             <div className="logo">
@@ -34,14 +34,16 @@ function Navbarr() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <div className="search">
-              <input
-                type="search"
-                onChange={handleChangeSearch}
-                value={word}
-                placeholder="ابحث..."
-              />
-            </div>
+            <div className="search">     
+                <input
+                className="ipt"
+                  type="search"
+                  onChange={handleChangeSearch}
+                  value={word}
+                  placeholder="ابحث..."
+                />   <i className="fas fa-search"></i>
+              </div>
+      
             <div className="cart-log">
               {user !== "" ? (
                 <NavDropdown title={user.name} id="basic-nav-dropdown">
@@ -69,7 +71,7 @@ function Navbarr() {
               <div className="cart">
                 <Nav.Link href="/cart"> العربه </Nav.Link>
                 <i className="fa-solid fa-cart-shopping"></i>
-                <span className="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+                <span className="position-absolute top-0 start-0 translate-middle badge rounded-pill "style={{backgroundColor: '#8ab046'}}>
                   {itemsNum || 0}
                 </span>
               </div>

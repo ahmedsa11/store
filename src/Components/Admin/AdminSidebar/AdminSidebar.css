@@ -19,7 +19,7 @@
   }
   
   .admin-side-text:hover {
-    background-color: #272727;
+    background-color: #a1b72c !important;
     color: white;
     font-size: 14px;
   }

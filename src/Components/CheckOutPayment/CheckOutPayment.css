@@ -35,13 +35,14 @@
     height: 45px;
     border-radius: 9px;
     border: none;
-    background-color: #272727;
+    background-color: #8ab046 !important;
     color: #ffffff;
     font-family: "Almarai";
+    transition: 0.3s;
     font-size: 14px;
     font-weight: normal;
   }
   .product-cart-add:hover {
-    color: #bdbaba !important;
+    color: #fff !important;
   }
   

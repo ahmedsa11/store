@@ -1,3 +1,7 @@
+.navv {
+    /* --bs-bg-opacity: 1; */
+    background-color: #dae797 !important;
+}
 .logo img{
     width: 104px;
     object-fit: contain;
@@ -23,19 +27,30 @@
 }
 
 .search input{
-    width: 90%;
-    border-radius: 7px;
+    width: 80%;
+    border-radius: 0px 15px 15px 0px;
     padding: 5px;
     text-align: center;
-    border: 2px solid #333;
+    border: 2px solid #a1b72c;
     transition: 0.3s;
 } 
 .search input:focus{
-    width: 100%;
+    width: 90%;
 }
 .search input{
-    outline: rgb(61, 56, 56);
+    outline: #a1b72c;
 }
 .cart{
     position: relative;
 }
+.search i{
+    background-color: #a1b72c;
+    margin-right: 0px;
+    width: 39px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+    border-radius: 15px 0px 0px 15px;
+    position: absolute;
+  
+  }

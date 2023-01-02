@@ -85,7 +85,7 @@ const UpdateProductHook=(id)=> {
   }, [Subcategory]);
 
   useEffect(() => {
-    try{
+    
     if (item.data) {
       setImages(item.data.images);
       setProdName(item.data.title);
@@ -96,8 +96,6 @@ const UpdateProductHook=(id)=> {
       setBrandid(item.data.brand);
       setColors(item.data.availableColors);
     }
-  }
-  catch (e) { } 
   }, [item]);
 
   const onSelectBrand = (e) => {

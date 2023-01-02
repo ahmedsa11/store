@@ -20,7 +20,7 @@ const ProductByBrand = () => {
                  <ProductCardContainer products={items} title="" btntitle=""/>
             </Col>
         </Row>
-        {pagination>1?<Pagination onPress={onPress}PageCount={pagination}/>:null} 
+        {pageCount>1?<Pagination onPress={onPress}PageCount={pageCount}/>:null} 
 
     </Container>:(<h2>لا توجد منتجات لهذه الماركه </h2>)}
 </div>

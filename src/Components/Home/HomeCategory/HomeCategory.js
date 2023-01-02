@@ -8,6 +8,7 @@ function HomeCategory() {
   return (
     <>
       <Container>
+        
         <Subtitle title="التصنيفات" btntitle="المزيد" pathText="/allcategory" />
         {loading ? (
           <Spinner animation="border" variant="primary" />

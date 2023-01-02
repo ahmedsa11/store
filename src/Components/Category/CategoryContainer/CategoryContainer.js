@@ -17,7 +17,7 @@ const CategoryContainer = ({loading,Category}) => {
       {loading ? (
         <Spinner animation="border" variant="primary" />
       ) : (
-        <Row className="my-2 d-flex ">
+        <Row className="my-2 d-flex justify-content-between row">
           {Category.data ? (
             Category.data.map((item, index) => {
               return (
