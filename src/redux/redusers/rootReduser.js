@@ -9,6 +9,8 @@ import addToWishListReducer from './WishListReduser'
 import couponReducer from './CouponReducer'
 import userAddressesReducer from "./UserAddressesReducer"
 import cartReducer from './CartReducer'
+import checkoutReducer from './CheckoutReduser'
+import orderReducer from './OrderReduser'
 export default combineReducers({
     getAllCategory,
     getAllBrand,
@@ -20,4 +22,6 @@ export default combineReducers({
     couponReducer,
     userAddressesReducer,
     cartReducer,
+    checkoutReducer,
+    orderReducer
 })

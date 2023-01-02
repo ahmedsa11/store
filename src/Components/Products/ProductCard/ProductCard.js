@@ -52,6 +52,7 @@ const ProductCard = ({ item, favProd }) => {
                   alt=""
                   height="16px"
                   width="16px"
+                  
                 />
                 <div className="card-rate mx-2">{item.ratingsAverage || 0}</div>
               </div>

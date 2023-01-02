@@ -8,6 +8,7 @@ const GetAllUserCartHook = () => {
     const [itemsNum, setItemsNum] = useState(0)
     const [cartItems, setCartItems] = useState([])
     const [couponNameRes, setCouponName] = useState('')
+    const [cartID, setCartID] = useState('0')
     const [totalCartPrice, setTotalCartPrice] = useState(0)
     const [totalCartPriceAfterDiscount, setTotalCartPriceAfterDiscount] = useState(0)
 
@@ -26,7 +27,7 @@ const GetAllUserCartHook = () => {
                 setItemsNum(res.numOfCartItems)
                 setCartItems(res.data.products)
                 setTotalCartPrice(res.data.totalCartPrice)
-
+                setCartID(res.data._id)
                 if (res.data.coupon) {
                     setCouponName(res.data.coupon)
                 } else {
@@ -40,6 +41,7 @@ const GetAllUserCartHook = () => {
 
             } else {
                 setCouponName('')
+                setCartID('')
                 setTotalCartPriceAfterDiscount('')
                 setItemsNum(0)
                 setCartItems([])
@@ -49,7 +51,7 @@ const GetAllUserCartHook = () => {
         }
     }, [loading])
 
-    return [itemsNum, cartItems, totalCartPrice, couponNameRes, totalCartPriceAfterDiscount]
+    return [itemsNum, cartItems, totalCartPrice, couponNameRes, totalCartPriceAfterDiscount,cartID]
 }
 
 export default GetAllUserCartHook

@@ -20,7 +20,7 @@ const AllCategoryPageHook = () => {
     if (Category.paginationResult)
       PageCount = Category.paginationResult.numberOfPages;
   } catch (e) {}
-
+ 
 
   const getPage = async(page) => {
    await dispatch(getAllCategoriesdata(5, page));

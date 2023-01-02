@@ -1,20 +1,35 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import ApplayCouponHook from '../../../Hook/cart/Cart-Coupon-Hook'
 import DeleteCartHook from '../../../Hook/cart/delete-cart-hook'
+import notify from '../../../Hook/Notifcation'
 import './CheckOutCart.css'
-const CartCheckout = ({ totalCartPrice, totalCartPriceAfterDiscount, couponNameRes }) => {
-    const [handelDeleteCart] = DeleteCartHook()
-
+const CartCheckout = ({ cartItems,totalCartPrice, totalCartPriceAfterDiscount, couponNameRes }) => {
+    const [handelDeleteCart, , , , , itemCount, , ,itemOne]=DeleteCartHook()
+    const navigate =useNavigate()
     const [couponName, onChangeCoupon, handelSubmitCoupon] = ApplayCouponHook();
+    console.log(cartItems)
     useEffect(() => {
         if (couponNameRes) {
             onChangeCoupon(couponNameRes)
         }
     }, [couponNameRes])
+    console.log(itemOne.quantity)
+    console.log(itemCount)
+    const handleCheckOut=()=>{
+        if(cartItems.length > 0) {
+            navigate('/order/paymethoud')
+        }
+        // if(itemCount<=itemOne.quantity){
+        //     notify(`الكميه المتاحه لهذا المنتج ${itemOne.quantity}`, "warn")
+        // }
+        else{
+            notify("من فضلك اضف منتج للعربه","warn")
+        }
+    }
     return (
         <Row className="my-1 d-flex justify-content-center cart-checkout pt-3">
             <Col xs="12" className="d-flex  flex-column  ">
@@ -34,14 +49,8 @@ const CartCheckout = ({ totalCartPrice, totalCartPriceAfterDiscount, couponNameR
                             `${totalCartPrice} جنيه`
                     }
                 </div>
-                <Link
-                    to="/order/paymethoud"
-                    style={{ textDecoration: "none" }}
-                    className="product-cart-add  d-inline ">
-
-                    <button className="product-cart-add w-100 px-2"> اتمام الشراء</button>
-                </Link>
-                <button onClick={handelDeleteCart} className="product-cart-add w-100 px-2 my-1"> مسح العربة</button>
+                    <button onClick={handleCheckOut} className="product-cart-add w-100 px-2"> اتمام الشراء</button>
+                <button  onClick={handelDeleteCart} className="product-cart-add w-100 px-2 my-1"> مسح العربة</button>
             </Col>
             <ToastContainer />
         </Row>

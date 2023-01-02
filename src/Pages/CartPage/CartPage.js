@@ -21,7 +21,7 @@ const CartPage = () => {
                 </Col>
 
                 <Col xs="6" md="3">
-                    <CartCheckout couponNameRes={couponNameRes} totalCartPriceAfterDiscount={totalCartPriceAfterDiscount} totalCartPrice={totalCartPrice} />
+                    <CartCheckout cartItems={cartItems} couponNameRes={couponNameRes} totalCartPriceAfterDiscount={totalCartPriceAfterDiscount} totalCartPrice={totalCartPrice} />
                 </Col>
             </Row>
         </Container >
