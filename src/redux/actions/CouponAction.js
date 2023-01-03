@@ -7,7 +7,6 @@ import { GetDataToken } from '../../Hooks/getAllData';
 export const addCoupon = (body) => async (dispatch) => {
     try {
         const response = await InsertData(`/api/v1/coupons`, body);
-        console.log(response)
         dispatch({
             type: ADD_COUPON,
             payload: response,

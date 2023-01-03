@@ -102,11 +102,9 @@ const UpdateProductHook=(id)=> {
     setBrandid(e.target.value);
   };
   const onSelectsubcat = (selectedList) => {
-    console.log(SelectedSubcat);
     setSelectedSubcat(selectedList);
   };
   const onRemovesubcat = (selectedList) => {
-    console.log(SelectedSubcat);
     setSelectedSubcat(selectedList);
   };
 

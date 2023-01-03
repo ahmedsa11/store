@@ -22,7 +22,6 @@ const DeleteRateHook = (review) => {
         handleClose();
     }
     const res = useSelector(state => state.reviewReducer.deleteReview)
-    console.log(res)
 
     useEffect(() => {
         if (loading === false) {

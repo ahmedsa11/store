@@ -13,10 +13,7 @@ const OrderPayCachHook = () => {
     const [addressDetalis, setAddressDetalis] = useState([]);
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [, , , , , cartID] = GetAllUserCartHook()
-    console.log(addressDetalis)
- 
-
+    const [, , , , , cartID] = GetAllUserCartHook() 
     const handelChooseAddress = (e) => {
         setAddressDetalis([])
         if (e.target.value != '0')

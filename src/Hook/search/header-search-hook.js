@@ -23,7 +23,6 @@ const HeaderSearchHook=()=> {
    }
    catch(e){}
    //   const getCat=(id)=>{
-   //      console.log(id)
    //      localStorage.setItem("OneCat",id)
    //      setgetOneCategory(id)
    //   }

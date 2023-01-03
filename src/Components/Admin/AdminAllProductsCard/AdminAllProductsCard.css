@@ -6,6 +6,9 @@
     letter-spacing: 0;
     line-height: 28px;
   }
+  .card-img {
+    object-fit: contain;
+  }
   .card-currency {
     color: #555550;
     font-family: Almarai;

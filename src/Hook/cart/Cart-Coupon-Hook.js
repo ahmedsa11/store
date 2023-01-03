@@ -29,7 +29,6 @@ const ApplayCouponHook = () => {
     useEffect(() => {
 
         if (loading === false) {
-            console.log(res)
             if (res && res.status === 200) {
                 notify("تم تطبيق الكوبون بنجاح", "success")
                 setTimeout(() => {

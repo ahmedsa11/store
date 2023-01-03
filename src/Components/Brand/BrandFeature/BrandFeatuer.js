@@ -5,7 +5,6 @@ import HomeBrandPage from "../../../Hook/brand/home-brand-hook";
 import BrandCard from "../BrandCard/BrandCard";
 const BrandFeatured = ({ title, btntitle }) => {
   const [Brand, loading] = HomeBrandPage();
-  console.log(Brand)
   return (
     <Container>
       <Subtitle title={title} btntitle={btntitle} pathText="/allbrand" />

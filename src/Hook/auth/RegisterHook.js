@@ -66,7 +66,6 @@ const RegisterHook=()=> {
     useEffect(() => {
         if (loading === false) {
             if (res) {
-                console.log(res)
                 if (res.data.token) {
                     localStorage.setItem("token", res.data.token)
                     notify("تم تسجيل الحساب بنجاح", "success")

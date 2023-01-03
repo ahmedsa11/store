@@ -12,7 +12,6 @@ const AdminOrderDetalis = () => {
     const [orderData, cartItems] = GetOrderDetalisHook(id)
 
     const [formatDate, onChangePaid, changePayOrder, onChangeDeliver, changeDeliverOrder] = ChangeOrderStatusHook(id)
-console.log(orderData)
     return (
         <div>
 

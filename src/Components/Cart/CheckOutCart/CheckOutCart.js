@@ -11,14 +11,11 @@ const CartCheckout = ({ cartItems,totalCartPrice, totalCartPriceAfterDiscount, c
     const [handelDeleteCart, , , , , itemCount, , ,itemOne]=DeleteCartHook()
     const navigate =useNavigate()
     const [couponName, onChangeCoupon, handelSubmitCoupon] = ApplayCouponHook();
-    console.log(cartItems)
     useEffect(() => {
         if (couponNameRes) {
             onChangeCoupon(couponNameRes)
         }
     }, [couponNameRes])
-    console.log(itemOne.quantity)
-    console.log(itemCount)
     const handleCheckOut=()=>{
         if(cartItems.length > 0) {
             navigate('/order/paymethoud')

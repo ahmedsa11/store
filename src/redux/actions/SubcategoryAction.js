@@ -4,7 +4,6 @@ import {GetData} from "../../Hooks/getAllData";
 export const CreateSubcategory = (data) => async (dispatch) => {
   try {
     const respons = await InsertData(`/api/v1/subcategories`, data);
-    console.log(data);
     dispatch({
       type: Create_Subcategory,
       payload: respons,

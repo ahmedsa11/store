@@ -26,7 +26,6 @@ const GetOrderDetalisHook = (id) => {
                 setOrderData(resOneOrder.data)
             if (resOneOrder.data.cartItems)
                 setCartItems(resOneOrder.data.cartItems)
-            console.log(resOneOrder)
         }
     }, [loading])
 

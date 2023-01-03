@@ -30,7 +30,6 @@ const ForgetPasswordHook = () => {
     useEffect(() => {
         if (loading === false) {
             if (res) {
-                console.log(res)
                 if (res.data.status === "Success") {
                     notify("تم ارسال الكود للايميل بنجاح", "success")
                     setTimeout(() => {

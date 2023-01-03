@@ -69,7 +69,6 @@ catch (e) { }
     //   OneCatString = "";
     // } else {
     //   OneCatString = `&category=${OneCat}`;
-    //   console.log(OneCatString);
     // }
     if (priceFrom === "" || priceFrom <= 0) {
       pricefromString = "";

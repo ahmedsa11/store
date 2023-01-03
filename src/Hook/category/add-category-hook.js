@@ -34,8 +34,6 @@ const AddCategoryHook=()=> {
     setIsPress(true);
     await dispatch(CreateCategory(formdata));
     setLoading(false);
-    console.log(Name);
-    console.log(img);
   };
   useEffect(() => {
     if (!loading) {

@@ -15,7 +15,6 @@ const InsertData = async (url, params) => {
     }
 }
   const res = await baseUrl.post(url, params,config);
-  console.log(res);
   return res;
 };
 

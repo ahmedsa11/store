@@ -6,8 +6,6 @@ import Pagination from '../../Components/Utility/Pagination/Pagination'
 import ViewProductAdminHook from '../../Hook/Product/view-product-admin'
 const AdminAllProductsPage = () => {
     const [items, pagination,onPress]=ViewProductAdminHook()
-    if(items)
-    console.log(items)
     return (
         <Container >
             <Row className='py-3'>
