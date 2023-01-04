@@ -6,7 +6,7 @@
   }
   
   .admin-side-text {
-    color: #272727;
+    color: #8ab046;
     font-family: "Almarai";
     font-size: 12px;
     font-weight: bold;
@@ -19,7 +19,7 @@
   }
   
   .admin-side-text:hover {
-    background-color: #272727;
+    background-color: #8ab046;
     color: white;
     font-size: 14px;
   }

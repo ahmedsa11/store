@@ -22,8 +22,8 @@ const CategoryHeader = () => {
 
             {
               items ? (items.map((item, index) => {
-                return (<Link to={`/products/category/${item._id}`} style={{ textDecoration: 'none' }}>
-                  <div key={index} className="cat-text-header ">{item.name}</div>
+                return (<Link key={index} to={`/products/category/${item._id}`} style={{ textDecoration: 'none' }}>
+                  <div  className="cat-text-header ">{item.name}</div>
                 </Link>
                 )
               })) : null

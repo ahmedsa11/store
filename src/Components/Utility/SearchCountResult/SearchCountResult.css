@@ -1,5 +1,5 @@
 .sub-tile {
-    color: #272727;
+    color: #8ab046;
     font-family: Almarai;
     font-size: 21px;
     font-weight: bold;
@@ -31,7 +31,7 @@
     padding: 10px;
   }
   .card-filter-item:hover {
-    background-color: #272727;
+    background-color: #8ab046;
     color: #ffffff;
   }
   /* end card filter */
