@@ -25,7 +25,7 @@ const CategoryHeader = () => {
                 return (<Link key={index} to={`/products/category/${item._id}`} style={{ textDecoration: 'none' }}>
                   <div  className="cat-text-header ">{item.name}</div>
                 </Link>
-                )
+                )  
               })) : null 
             }
             <Link to="/allcategory" style={{ textDecoration: 'none' }}>
