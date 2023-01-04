@@ -26,7 +26,7 @@ const CategoryHeader = () => {
                   <div  className="cat-text-header ">{item.name}</div>
                 </Link>
                 )
-              })) : null
+              })) : null 
             }
             <Link to="/allcategory" style={{ textDecoration: 'none' }}>
               <div className="cat-text-header">المزيد</div>
