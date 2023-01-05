@@ -158,8 +158,14 @@ const AddProductHook=()=> {
       if (Product) {
         if (Product.status === 201) {
           notify("تم الاضافة بنجاح", "success");
+          setTimeout(()=>{
+            window.location.reload(false);
+          },1500)
         } else {
           notify("هناك مشكله", "error");
+          setTimeout(()=>{
+            window.location.reload(false);
+          },1500)
         }
       }
     }

@@ -1,0 +1,22 @@
+.internet{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.internet img{
+    width: 500px;
+    object-fit: cover !important;
+}
+/* @media (max-width: 768px){
+    .internet{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+
+    }
+} */

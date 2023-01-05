@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategoriesdata } from "../../redux/actions/CategoriesAction";
-import Connect from "../internetconnection";
 const HomeCategoryPage=()=> {
   const colors = [
     "#F4DBA4",
@@ -14,7 +13,6 @@ const HomeCategoryPage=()=> {
   const dispatch = useDispatch();
   const { Category, loading } = useSelector((state) => state.getAllCategory);
   useEffect(() => {
-    Connect();
     dispatch(getAllCategoriesdata());
   }, []);
   return [colors, Category, loading];

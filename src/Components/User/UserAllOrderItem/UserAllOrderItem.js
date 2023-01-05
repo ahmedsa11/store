@@ -6,13 +6,14 @@ const UserAllOrderItem = ({ orderItem }) => {
         const options = { year: "numeric", month: "numeric", day: "numeric" }
         return new Date(dateString).toLocaleDateString(undefined, options)
     }
+
     return (
         <div className="user-order mt-2">
             <Row>
                 <div className="py-2 order-title">طلب رقم #{orderItem.id || 0} ...تم بتاريخ {formatDate(orderItem.createdAt)}</div>
             </Row>
             {
-                orderItem.cartItems ? (orderItem.cartItems.map((item, index) => {
+                orderItem &&orderItem.cartItems ? (orderItem.cartItems.map((item, index) => {
                     return <UserAllOrderCard key={index} item={item} />
                 })) : null
             }

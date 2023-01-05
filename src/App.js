@@ -35,12 +35,14 @@ import ProtectedRouteHook from "./Hook/auth/Protected-Route-Hook";
 import ProtectedRoute from "./Components/Utility/ProtectedRoute/ProtectedRoute";
 import ProductByCategory from "./Pages/ShopProductsPage/ProductByCategory";
 import ProductByBrand from "./Pages/ShopProductsPage/ProductByBrand";
+import Internet from "./Components/internet/internet";
 function App() {
   const [isUser, isAdmin, userData] = ProtectedRouteHook()
   return (
     <>
       <Layout>
         <BrowserRouter>
+        {navigator.onLine===false?(<Internet/>):(
           <Routes>
             <Route index element={<HomePage />} />
             <Route path="/login" element={<Login />} />
@@ -101,6 +103,7 @@ function App() {
 <Route path="/user/forget-password" element={<Forgetpassword />} />
           <Route path="/user/verify-code" element={<VerifyPassword />} />
           </Routes>
+          )}
         </BrowserRouter>
       </Layout>
     </>

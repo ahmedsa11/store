@@ -33,11 +33,11 @@ const UserGetAllOrderHook = () => {
     const resAllOrder = useSelector(state => state.orderReducer.getAllOrders)
     useEffect(() => {
         if (loading === false) {
-            if (resAllOrder.results)
+            if (resAllOrder&&resAllOrder.results)
                 setResult(resAllOrder.results)
-            if (resAllOrder.paginationResult)
+            if (resAllOrder&&resAllOrder.paginationResult)
                 setPaginate(resAllOrder.paginationResult)
-            if (resAllOrder.data)
+            if (resAllOrder&&resAllOrder.data)
                 setOrderData(resAllOrder.data)
 
         }

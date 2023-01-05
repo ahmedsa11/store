@@ -16,6 +16,7 @@ const CartItem = ({item}) => {
     handeleUpdateCart,
     ,
   ]= DeleteCartHook(item,item.product._id)
+  console.log(item)
     return (
       <Col xs="12" className="cart-item-body my-2 d-flex px-2">
 
@@ -34,7 +35,7 @@ const CartItem = ({item}) => {
         </Modal.Footer>
       </Modal>
 
-      <img width="160px" height="197px" src={item.product?item.product.imageCover: mobile} alt="" />
+      <img width="160px" height="197px" src={item.product ? item.product.imageCover : mobile} alt="" />
       <div className="w-100">
         <Row className="justify-content-between">
           <Col sm="12" className=" d-flex flex-row justify-content-between">
