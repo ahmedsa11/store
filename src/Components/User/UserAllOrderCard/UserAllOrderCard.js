@@ -11,7 +11,7 @@ const UserAllOrderCard = ({item}) => {
             <Row className="d-flex mb-2">
                 <Col xs="3" md="2" className="d-flex justify-content-start">
                     <Link to={`/products/${item.product?item.product._id:null}`} style={{ textDecoration: 'none' }}>
-                        <img width="93px" height="120px" src={item.product?item.product.imageCover:null} alt="" />
+                        <img width="93px" height="120px" src={`http://127.0.0.1:8000/products/${item.product ? item.product.imageCover : null}`}  alt="" />
                     </Link>
                 </Col>
                 <Col xs="8" md="6">

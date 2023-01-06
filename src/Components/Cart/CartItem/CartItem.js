@@ -35,7 +35,7 @@ const CartItem = ({item}) => {
         </Modal.Footer>
       </Modal>
 
-      <img width="160px" height="197px" src={item.product ? item.product.imageCover : mobile} alt="" />
+      <img width="160px" height="197px" src={`http://127.0.0.1:8000/products/${item.product ? item.product.imageCover : mobile}`} alt="" />
       <div className="w-100">
         <Row className="justify-content-between">
           <Col sm="12" className=" d-flex flex-row justify-content-between">

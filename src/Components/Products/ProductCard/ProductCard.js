@@ -29,7 +29,7 @@ const ProductCard = ({ item, favProd }) => {
         <div className="d-flex justify-content-end mx-2">
           <img
             src={favImg}
-            alt=""
+            alt="" 
             onClick={handelFav}
             className="text-center"
             style={{

@@ -12,7 +12,7 @@ const BrandFeatured = ({ title, btntitle }) => {
         <Spinner animation="border" variant="primary" />
       ) : (
         <Row className="my-2 d-flex justify-content-between">
-          {Brand.data ? (
+          {Brand&&Brand.data ? (
             Brand.data.slice(0, 5).map((item, index) => {
               return (
                 <BrandCard key={index} title={item.name}id={item._id} img={item.image} />
