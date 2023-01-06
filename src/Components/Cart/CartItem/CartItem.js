@@ -16,9 +16,8 @@ const CartItem = ({ item }) => {
     handeleUpdateCart,
     ,
   ] = DeleteCartHook(item, item.product._id);
-  console.log(item);
   return (
-    <Col xs="12" className="cart-item-body my-2 d-flex px-2">
+    <Col xs="12" className="cart-item-body  my-2 d-flex px-2">
       <Modal show={show} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>
@@ -40,16 +39,19 @@ const CartItem = ({ item }) => {
       </Modal>
 
       <img
+      className="cart"
         width="160px"
         height="197px"
-        src={`https://combative-plum-blackbuck.cyclic.app/${
+        src={`https://combative-plum-blackbuck.cyclic.app/products/${
           item.product ? item.product.imageCover : mobile
         }`}
         alt=""
       />
-      <div className="w-100">
+      <div className="w-100 ">
         <Row className="justify-content-between">
+
           <Col sm="12" className=" d-flex flex-row justify-content-between">
+            
             <div className="d-inline pt-2 cat-text">
               {item.product.category ? item.product.category.name : ""}
             </div>
@@ -92,10 +94,10 @@ const CartItem = ({ item }) => {
           </Col>
         </Row>
 
-        <Row className="justify-content-between">
+        <Row className="justify-content-between ">
           <Col sm="12" className=" d-flex flex-row justify-content-between">
             <div className="d-inline pt-2 d-flex">
-              <div className="cat-text mt-2  d-inline">الكميه</div>
+              <div className="cat-text mt-2  d-inline flex-wrap">الكميه</div>
               <input
                 value={itemCount}
                 onChange={onChangeCount}
@@ -103,7 +105,7 @@ const CartItem = ({ item }) => {
                 type="number"
                 style={{ width: "60px", height: "40px" }}
               />
-              <Button onClick={handeleUpdateCart} className="btn btn-dark">
+              <Button onClick={handeleUpdateCart} className="btn btn-dark app">
                 تطبيق
               </Button>
             </div>
@@ -114,6 +116,7 @@ const CartItem = ({ item }) => {
         </Row>
       </div>
     </Col>
+    
   );
 };
 

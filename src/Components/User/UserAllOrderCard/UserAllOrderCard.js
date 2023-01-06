@@ -15,7 +15,7 @@ const UserAllOrderCard = ({ item }) => {
             <img
               width="93px"
               height="120px"
-              src={`https://combative-plum-blackbuck.cyclic.app/${
+              src={`https://combative-plum-blackbuck.cyclic.app/products/${
                 item.product ? item.product.imageCover : null
               }`}
               alt=""
