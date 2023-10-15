@@ -22,9 +22,9 @@ const RateContainer = ({rateQty,rateAvg}) => {
             </Row>
             <RatePost/>
 
-            {allReview.data ? (allReview.data.map((review, index) => {
+            {allReview&&allReview.data ? (allReview.data.map((review, index) => {
                 return (<RateItem key={index} review={review} />)
-            })) : <h6>لا يوجد تقيمات الان</h6>}
+            })) : <h6>لا يوجد تقيمات الان</h6>} 
 
 
             {

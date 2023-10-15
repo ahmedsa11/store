@@ -14,7 +14,7 @@ function HomeCategory() {
           <Spinner animation="border" variant="primary" />
         ) : (
           <Row className="my-2 d-flex justify-content-between">
-            {Category.data ? (
+            {Category&&Category.data ? (
               Category.data.slice(0, 5).map((item, index) => {
                 return (
                   <CategoreCard
